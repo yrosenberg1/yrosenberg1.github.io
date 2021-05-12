@@ -1815,3 +1815,68 @@ input, select, textarea {
 		.about-welcome{
 			font-size: 2rem;
 		}
+
+		ul.icon-rows img {
+			height: 90px;
+			padding: 5px;
+			
+		height: 90px;
+		padding: 35px 10px;
+		box-sizing: content-box;
+		}
+
+		ul.icon-rows {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		span.tooltiptext {
+			visibility: hidden;
+			position: absolute;
+			bottom: -4%;
+			z-index: 1;
+			background-color: #180045;
+  			color: #fff;
+  			text-align: center;
+  			width: 120px;
+  			border-radius: 6px;
+
+		}
+
+		span.tooltiptext::after {
+			content: " ";
+  			position: absolute;
+  			bottom: 100%;  
+  			left: 50%;
+  			margin-left: -5px;
+  			border-width: 5px;
+  			border-style: solid;
+  			border-color: transparent transparent #180045 transparent;
+		}
+
+		ul.icon-rows div{
+			position: relative;
+			
+		}
+		
+
+		ul.icon-rows div:hover span{
+			position: absolute;
+			visibility: visible
+		}
+
+		/* ul.icon-rows li {
+			display: flex;
+			flex-direction: column;
+			width: fit-content;
+			margin: 0;
+			text-align: center;
+			color: #A30052;
+		} */
+
+		/* ul.icon-rows {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		ul.icon-rows li p{
+		padding: 0;
+		} */
