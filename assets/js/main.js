@@ -17,8 +17,11 @@
 		$footer = $('#footer'),
 		$main = $('#main'),
 		$main_articles = $main.children('article'),
-		$projects_cycle = $('#projects-sel'),
-		$selected_project = $projects_cycle.children('div'), 
+		// $projects_cycle = $('#projects-sel'),
+		// $selected_project = $projects_cycle.children('div'), 
+		$activeProjBtn = $('.active-proj')
+		$leftBtn = $('.projects-switcher button:first-child')
+		$rightBtn = $('.projects-switcher button:last-child')
 		$left_arrow = $('#left-arrow-btn'),
 		$right_arrow = $('#right-arrow-btn');
 
@@ -54,19 +57,24 @@
 
 		$left_arrow.on('click', function(event){
 			
-			$active = $selected_project.filter('.default-project')
-			$new = !!$active.prev().length ? $active.prev() : $selected_project.last()
-			$active.removeClass('default-project').addClass('projects-main-content')
-			$new.removeClass('projects-main-content').addClass('default-project')
+			$leftBtn.click();
 			
+			// $active = $selected_project.filter('.default-project')
+			
+			// $new = $active.prev()[0].className !== "projects-switcher" ? $active.prev() : $selected_project.last()
+			// debugger
+			// $active.removeClass('default-project').addClass('projects-main-content')
+			// $new.removeClass('projects-main-content').addClass('default-project')
+			
+
 		})
 
 		$right_arrow.on('click', function(event){
-			
-			$active = $selected_project.filter('.default-project')
-			$new = !!$active.next().length ? $active.next() : $selected_project.first()
-			$active.removeClass('default-project').addClass('projects-main-content')
-			$new.removeClass('projects-main-content').addClass('default-project')
+			$rightBtn.click();	
+			// $active = $selected_project.filter('.default-project')
+			// $new = !!$active.next().length ? $active.next() : $selected_project.first()
+			// $active.removeClass('default-project').addClass('projects-main-content')
+			// $new.removeClass('projects-main-content').addClass('default-project')
 			
 		})
 
@@ -483,4 +491,53 @@ function goToContact() {
 	
 	about.classList.remove('selected-dropdown')
 	contact.classList.add('selected-dropdown')
+}
+
+function chooseProject(selected){
+	
+	const chosenBtn = selected
+	const prevProjBtn = document.querySelector(".active-proj")
+	const oldValue= prevProjBtn.value;
+	const oldSrc = prevProjBtn.firstChild.src;
+	const projectsMain = document.getElementById('projects-sel');
+	const projectsDivs = projectsMain.getElementsByClassName('projects-main-content')
+	const currentProj = projectsMain.querySelector('.default-project')
+	if (prevProjBtn === chosenBtn) return
+	
+	switch (chosenBtn.value) {
+		case "cyms":
+			
+			currentProj.classList.remove('default-project')
+			currentProj.classList.add('projects-main-content')
+			
+			projectsDivs[2].classList.add('default-project')
+			projectsDivs[2].classList.remove('projects-main-content')
+			break;
+
+		case "mlb":
+			currentProj.classList.remove('default-project')
+			currentProj.classList.add('projects-main-content')
+			
+			
+			projectsDivs[0].classList.add('default-project')
+			projectsDivs[0].classList.remove('projects-main-content')
+		break;
+
+		case "videoTube":
+			currentProj.classList.remove('default-project')
+			currentProj.classList.add('projects-main-content')
+			
+			
+			projectsDivs[1].classList.add('default-project')
+			projectsDivs[1].classList.remove('projects-main-content')
+			break;
+	
+		default:
+			
+			break;
+	}
+			prevProjBtn.value = selected.value
+			prevProjBtn.firstChild.src = selected.firstChild.src
+			chosenBtn.value = oldValue
+			chosenBtn.firstChild.src = oldSrc
 }

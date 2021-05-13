@@ -1845,7 +1845,7 @@ input, select, textarea {
   			width: 100px;
   			border-radius: 6px;
 
-			right: 18px;  
+			right: 12px;  
 
 		}
 
@@ -1891,4 +1891,28 @@ input, select, textarea {
 		.dropdown-resume-btn:hover{
 		background:inherit;
 		color:inherit;
+	}
+
+	ul.projects-switcher button img {
+		height: inherit;
+		width: inherit;
+		border: 1px solid;
+		border-radius: 50%;
+		padding: 5px;
+	}
+
+	ul.projects-switcher button {
+		padding: 0;
+		box-shadow: none;
+		border-radius: 50%;
+	}
+
+	ul.projects-switcher {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	.active-proj {
+		transform: scale(2.0);
 	}
