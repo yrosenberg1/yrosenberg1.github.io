@@ -11,7 +11,7 @@
 		$projects = $('#projects'),
 		$wrapper = $('#wrapper'),
 		$dropdown = $('.dropdown'),
-		$menu_items = $dropdown.find('a'),
+		$menu_items = $dropdown.find('.dropdown-nav-links a'),
 		$dropdown_pic = $('.dropdown-profile-pic'),
 		$header = $('#header'),
 		$footer = $('#footer'),
@@ -71,6 +71,7 @@
 		})
 
 		$menu_items.on('click',function(event){
+			debugger
 			$menu_items.removeClass('selected-dropdown');
 			
 			$selected = $menu_items.filter(event.target)
@@ -378,6 +379,7 @@
 				
 				$menu_items.removeClass('selected-dropdown');
 				///
+				
 				// Article visible? Hide.
 					if ($body.hasClass('is-article-visible'))
 						$main._hide(true);
