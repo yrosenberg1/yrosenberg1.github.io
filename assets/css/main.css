@@ -1845,6 +1845,8 @@ input, select, textarea {
   			width: 100px;
   			border-radius: 6px;
 
+			right: 18px;  
+
 		}
 
 		span.tooltiptext::after {
