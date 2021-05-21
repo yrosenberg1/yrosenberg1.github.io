@@ -1931,3 +1931,8 @@ input, select, textarea {
 	.inner a{
 		border-bottom: none;
 	}
+
+	a.dropdown-resume-link {
+		border-bottom: none;
+	}
+	
