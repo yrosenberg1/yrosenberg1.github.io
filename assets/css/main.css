@@ -1936,3 +1936,6 @@ input, select, textarea {
 		border-bottom: none;
 	}
 	
+	#counter{
+		display: none;
+	}
